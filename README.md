@@ -4,28 +4,37 @@
 
 <h2> Required Imports </h2>
 These include:
+
 - Torch
-  > An open-source machine learning library which has necesssary algorithms for deep learning we will use.
+  >An open-source machine learning library which has necesssary algorithms for deep learning we will use.
+
 - Tqdm
-  > A simple visual aid to show progress bar of operations
+  >A simple visual aid to show progress bar of operations
+
 - Pandas
-  > A software library used for data manipulation and analysis of tabulated datasets
+  >A software library used for data manipulation and analysis of tabulated datasets
+
 - Numpy
-  > A library to support large arrays and functions, which will be required in analyzing our dataset
+  >A library to support large arrays and functions, which will be required in analyzing our dataset
+
 - MatplotLib
-  > A plotting library to visualize certain features
+  >A plotting library to visualize certain features
+
 - Sklearn
-  > A Machine Learning library with classification algorithms among others.
+  >A Machine Learning library with classification algorithms among others.
+
+
+
 
 <h2> Data Analysis and Exploration </h2>
-Local loading in of the dataset in the form of a csv file. For access to the dataset, it can be found [here](https://www.kaggle.com/praveengovi/bert-twitter-sentiment-classifier/data) . From there, we note:
+Local loading in of the dataset in the form of a csv file. For access to the dataset, it can be found [here](https://www.kaggle.com/praveengovi/bert-twitter-sentiment-classifier/data). 
+From there, we note:
   * The sum of null values in the dataset
   * The size and shape of the dataset
 We also note that the dataset totals over 162,980 tweets, and is composed with two columns, one containing the tweet, and the other it's category
 
 A peak into the data
-
-Understanding how the data is formatted
+<img width="560" alt="Peep_Into_Data" src="https://user-images.githubusercontent.com/69823896/146149569-88d2cb51-eadf-40f1-8e0b-a600bf67b8ea.png">
 
 
 <h2> Distribution of the dataset </h2>
@@ -42,6 +51,8 @@ We will clean our data to ignore null values, seen as "nan"
 <h2> Target Encoding </h2>
 Implementation of Target Encoding to convert our tweets into numbers for the computer to understand. 
 Target encoding doesn't add to the dimensionality of the dataset, and benefits well here.
+<img width="307" alt="Target_Encoding" src="https://user-images.githubusercontent.com/69823896/146149957-b605c9be-33b0-45d9-a809-912414e25723.png">
+
 
 
 <h2> Data Preparation for BERT Modeling </h2>
@@ -63,8 +74,12 @@ and import our BERT tokenizer to convert our text into tokens corresponding to t
 Next, we apply an attention mask, which is used while batching sequences together by indicating to the model which tokens should and should not be attended to in order to ensure they do not violate our maximum length.
 Will determine if the first sequence needs to be padded up to length, or the second truncated down
 We create a mask of 1 for all input tokens and 0 for all padding tokens.
+<img width="1054" alt="Data_Prep_Before_Tokenization" src="https://user-images.githubusercontent.com/69823896/146150062-0a84bb9e-82ab-49e4-b86a-e0eb236c0c19.png">
+
 
 **Converting our data into torch tensors** which is the required data type for our model. We as well specify batch size while training, and define our iterator using torch DataLoader. Use of torch DataLoader is simply to help on memory during training since this prevents loading in our entire dataset into memory.
+<img width="995" alt="Trained_Data" src="https://user-images.githubusercontent.com/69823896/146150277-ece161c4-63c5-41cb-8464-a09ad490e3fb.png">
+
 
 <h2> Loading BERT for Sequence Classification </h2>
 We load BERT for Sequence Classifiation, specifically using a pretrained BERT model with a single linear classification layer on top, with 3 total labels (positive, neutral, and negative). We follow this with basic tuning of parameters, such as learning rate, epochs, and AdamW with epsilon, a variation of the Adam optimizer.
@@ -74,6 +89,10 @@ Now we train our BERT. First we begin by making empty arrays to store our loss a
 Next, we set up a function to calculate the loss for each epoch in our range using tnrange (*like use of range, but has a tqdm wrapper*) Afterwards, we set our model to train and unpack the inputs from our dataloader and pass it forward and backwards (*hence the B. in BERT*)
 
 Then, we update the parameters and take a step using the computed gradient and update the learning rate schedule using a scheduler. A scheduler functions by taking the epoch index and current learning rate as inputs to return a new learning rate. In the same step, we also update the tracking variables and calculate the average loss over the training data and store the current learning rate.
+
+<h2> Problem Encountered </h2> 
+<img width="1425" alt="Problem_1" src="https://user-images.githubusercontent.com/69823896/146150722-72c6bb49-6657-4729-b2c8-bfcc15c10a4c.png">
+A chief problem encountered was the computational power necessary to train our BERT. Using cloud resources with 30 Gb of ram and 8 CPU's proved too much for the program, which eventually timed out during the session. The results were only attainable running on GPU from a much more powerful gaming computer that was luckily on hand.
 
 ***Model Evaluation*** 
 <img width="807" alt="Screen Shot 2021-12-15 at 5 57 29 AM" src="https://user-images.githubusercontent.com/69823896/146147423-f4e93934-f86c-4c78-be9c-c798374444f3.png">
@@ -85,9 +104,12 @@ the prediction obtained good results for true positives, false negatives, true n
 <h2> Analysis </h2>
 Here we plot a confusion matrix using blue coloring. Included is a function that normalizes our confusion matrix, though normalization does not have a large effect on our data analysis.
 Lastly, we add labels to convey the emotional sentiment alongwith our confusion matrix to view how our model performed.
+<img width="754" alt="Classification_Report" src="https://user-images.githubusercontent.com/69823896/146150427-c3d5b4a3-199d-43a6-8685-6d54a65a146a.png">
+
+
 
 <h2> Conclusion </h2>
-
+In conclusion, our model performed exceedingly well, though it most likely resulted in overfitment. The overall precision (A measure of positively predicted values), recall (or sensitivity), and f1-score all equated to 1.000. In fact, every metric equated to 1, indicating that the BERT was either fantastic in it's classification or it overfitted. 
 
 <h2> Resources </h2>
 
