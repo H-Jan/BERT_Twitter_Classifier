@@ -2,7 +2,7 @@
 
 >Tweets have quickly become a representation of voice across many countries, and as such, a prime depository for exploring NLP’s and their potential. The following is a notebook which explores the sentiment of tweets during the 2020 Indian election, and, using the BERT or Bidirectional Encoder Representations from Transformers model developed by Google, classifies tweets into one of three categories. 
 
-##**Required Imports**
+**##Required Imports**
 
 These include:
 
@@ -27,7 +27,7 @@ A Machine Learning library with classification algorithms among others.
 
 
 
-##**Data Analysis and Exploration**
+**##Data Analysis and Exploration**
 Local loading in of the dataset in the form of a csv file. From there, we note:
 
 The sum of null values in the dataset
@@ -42,7 +42,7 @@ Understanding how the data is formatted
 
 
 
-###**Distribution of the dataset**
+**###Distribution of the dataset**
 Understanding how the dataset is distributed across possible categories. Here we can note:
 
 72,250 positive tweets
@@ -53,7 +53,7 @@ Understanding how the dataset is distributed across possible categories. Here we
 
 
 
-###**Data Cleaning**
+**###Data Cleaning**
 We will clean our data to ignore null values, seen as "nan"
 
 
@@ -71,7 +71,7 @@ Target encoding doesn't add to the diemnsionality of the dataset, and benefits w
 
 
 
-###**Data Preparation for BERT Modeling***
+**###Data Preparation for BERT Modeling***
 First, we create a label for the sentence list, and then check the distribution of the data based on the labels.
 As we can note, the distribution is nearly identical to our dataset above, with a few missing values 
 (most likely nan values). We then set the maximum length of any sequence to 280 (for 280 characters in a tweet)
@@ -121,7 +121,7 @@ Use of torch DataLoader is simply to help on memory during training since this p
 
 
 
-###**Loading BERT for Sequence Classification**
+**###Loading BERT for Sequence Classification**
 We load BERT for Sequence Classifiation, specifically using a pretrained BERT model with a single linear classification layer on top, with 3 total labels (positive, neutral, and negative). We follow this with basic tuning of parameters, such as learning rate, epochs, and AdamW with epsilon, a variation of the Adam optimizer.
 
 
@@ -131,7 +131,7 @@ We load BERT for Sequence Classifiation, specifically using a pretrained BERT mo
 
 
 
-###**Training**
+**###Training**
 Now we train our BERT. First we begin by making empty arrays to store our loss and accuracy for plotting.
 
 Next, we set up a function to calculate the loss for each epoch in our range using tnrange (like use of range, but has a tqdm wrapper)
@@ -154,6 +154,6 @@ the prediction obtained good results for true positives, false negatives, true n
 
 
 
-###**Analysis**
+**###Analysis**
 Here we plot a confusion matrix using blue coloring. Included is a function that normalizes our confusion matrix, though normalization does not have a large effect on our data analysis.
 Lastly, we add labels to convey the emotional sentiment alongwith our confusion matrix to view how our model performed.
