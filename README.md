@@ -1,4 +1,4 @@
-#BERT Classifier for 2020 India Election Sentiment via Tweets
+<h1> BERT Classifier for 2020 India Election Sentiment via Tweets
 
 >Tweets have quickly become a representation of voice across many countries, and as such, a prime depository for exploring NLP’s and their potential. The following is a notebook which explores the sentiment of tweets during the 2020 Indian election, and, using the BERT or Bidirectional Encoder Representations from Transformers model developed by Google, classifies tweets into one of three categories. 
 
