@@ -4,17 +4,17 @@
 
 <h2> Required Imports </h2>
 These include:
- - Torch
+- Torch
   > An open-source machine learning library which has necesssary algorithms for deep learning we will use.
- - Tqdm
+- Tqdm
   > A simple visual aid to show progress bar of operations
- - Pandas
+- Pandas
   > A software library used for data manipulation and analysis of tabulated datasets
- - Numpy
+- Numpy
   > A library to support large arrays and functions, which will be required in analyzing our dataset
- - MatplotLib
+- MatplotLib
   > A plotting library to visualize certain features
- - Sklearn
+- Sklearn
   > A Machine Learning library with classification algorithms among others.
 
 <h2> Data Analysis and Exploration </h2>
@@ -28,23 +28,23 @@ A peak into the data
 Understanding how the data is formatted
 
 
-<h3> Distribution of the dataset </h3>
+<h2> Distribution of the dataset </h2>
 Understanding how the dataset is distributed across possible categories. Here we can note:
   * 72,250 positive tweets
   * 55,213 neutral tweets
   * 35,510 negative tweets
 
 
-<h3> Data Cleaning </h3>
+<h2> Data Cleaning </h2>
 We will clean our data to ignore null values, seen as "nan"
 
 
-<h3> Target Encoding </h3>
+<h2> Target Encoding </h2>
 Implementation of Target Encoding to convert our tweets into numbers for the computer to understand. 
 Target encoding doesn't add to the dimensionality of the dataset, and benefits well here.
 
 
-<h3> Data Preparation for BERT Modeling </h3>
+<h2> Data Preparation for BERT Modeling </h2>
 First, we create a label for the sentence list, and then check the distribution of the data based on the labels.
 As we can note, the distribution is nearly identical to our dataset above, with a few missing values 
 (most likely nan values). We then set the maximum length of any sequence to 280 (for 280 characters in a tweet)
@@ -66,10 +66,10 @@ We create a mask of 1 for all input tokens and 0 for all padding tokens.
 
 **Converting our data into torch tensors** which is the required data type for our model. We as well specify batch size while training, and define our iterator using torch DataLoader. Use of torch DataLoader is simply to help on memory during training since this prevents loading in our entire dataset into memory.
 
-<h3> Loading BERT for Sequence Classification </h3>
+<h2> Loading BERT for Sequence Classification </h2>
 We load BERT for Sequence Classifiation, specifically using a pretrained BERT model with a single linear classification layer on top, with 3 total labels (positive, neutral, and negative). We follow this with basic tuning of parameters, such as learning rate, epochs, and AdamW with epsilon, a variation of the Adam optimizer.
 
-<h3> Training </h3>
+<h2> Training </h2>
 Now we train our BERT. First we begin by making empty arrays to store our loss and accuracy for plotting.
 Next, we set up a function to calculate the loss for each epoch in our range using tnrange (*like use of range, but has a tqdm wrapper*) Afterwards, we set our model to train and unpack the inputs from our dataloader and pass it forward and backwards (*hence the B. in BERT*)
 
@@ -80,14 +80,14 @@ Then, we update the parameters and take a step using the computed gradient and u
 probabilistic output in our final layer, and evaluate our accuracy, both traditional and MCC (our Matthews Correlation Coefficient. It produces a high score only if 
 the prediction obtained good results for true positives, false negatives, true negatives, and false positives).
 
-<h3> Analysis </h3>
+<h2> Analysis </h2>
 Here we plot a confusion matrix using blue coloring. Included is a function that normalizes our confusion matrix, though normalization does not have a large effect on our data analysis.
 Lastly, we add labels to convey the emotional sentiment alongwith our confusion matrix to view how our model performed.
 
-<h3> Conclusion </h3>
+<h2> Conclusion </h2>
 
 
-<h3> Resources </h3>
+<h2> Resources </h2>
 
 Coursera Course on BERT, found [here](https://www.coursera.org/lecture/attention-models-in-nlp/bidirectional-encoder-representations-from-transformers-bert-lZX7F)
 
