@@ -29,19 +29,22 @@ These include:
 <h2> Data Analysis and Exploration </h2>
 Local loading in of the dataset in the form of a csv file. For access to the dataset, it can be found [here](https://www.kaggle.com/praveengovi/bert-twitter-sentiment-classifier/data). 
 From there, we note:
-  * The sum of null values in the dataset
-  * The size and shape of the dataset
+
+  - The sum of null values in the dataset
+  - The size and shape of the dataset
+  
 We also note that the dataset totals over 162,980 tweets, and is composed with two columns, one containing the tweet, and the other it's category
 
 A peak into the data
-<img width="560" alt="Peep_Into_Data" src="https://user-images.githubusercontent.com/69823896/146149569-88d2cb51-eadf-40f1-8e0b-a600bf67b8ea.png">
+<img width="560" alt="Peep_Into_Data" src="https://user-images.githubusercontent.com/69823896/146152464-6ea9abbf-0fc1-46c3-b1fc-3c036b6c2fc4.png">
 
 
 <h2> Distribution of the dataset </h2>
 Understanding how the dataset is distributed across possible categories. Here we can note:
-  * 72,250 positive tweets
-  * 55,213 neutral tweets
-  * 35,510 negative tweets
+
+  - 72,250 positive tweets
+  - 55,213 neutral tweets
+  - 35,510 negative tweets
 
 
 <h2> Data Cleaning </h2>
