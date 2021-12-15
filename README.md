@@ -1,6 +1,6 @@
 <h1> BERT Classifier for 2020 India Election Sentiment via Tweets </h1>
 
-> Tweets have quickly become a representation of voice across many countries, and as such, a prime depository for exploring NLP’s and their potential. The following is a notebook which explores the sentiment of tweets during the 2020 Indian election, and, using the BERT or Bidirectional Encoder Representations from Transformers model developed by Google, classifies tweets into one of three categories. 
+> Tweets have quickly become a representation of voice across mMany countries, and as such, a prime depository for exploring NLP’s and their potential. The following is a notebook which explores the sentiment of tweets during the 2020 Indian election, and, using the BERT or Bidirectional Encoder Representations from Transformers model developed by Google, classifies tweets into one of three categories. 
 
 <h2> Required Imports </h2>
 These include:
@@ -18,7 +18,7 @@ These include:
   > A Machine Learning library with classification algorithms among others.
 
 <h2> Data Analysis and Exploration </h2>
-Local loading in of the dataset in the form of a csv file. For access to the dataset, it can be found [here](https://www.kaggle.com/praveengovi/bert-twitter-sentiment-classifier/data). From there, we note:
+Local loading in of the dataset in the form of a csv file. For access to the dataset, it can be found [here](https://www.kaggle.com/praveengovi/bert-twitter-sentiment-classifier/data) . From there, we note:
   * The sum of null values in the dataset
   * The size and shape of the dataset
 We also note that the dataset totals over 162,980 tweets, and is composed with two columns, one containing the tweet, and the other it's category
@@ -75,7 +75,9 @@ Next, we set up a function to calculate the loss for each epoch in our range usi
 
 Then, we update the parameters and take a step using the computed gradient and update the learning rate schedule using a scheduler. A scheduler functions by taking the epoch index and current learning rate as inputs to return a new learning rate. In the same step, we also update the tracking variables and calculate the average loss over the training data and store the current learning rate.
 
-***Model Evaluation*** In this section of the notebook, we set metrics to evaluate our loss on the validation set, evaluating the data for each epoch. As each batch is working, we unpack the inputs from our data model and tell the model not to compute or store gradients in order to save memory and encourage validation speed 
+***Model Evaluation*** 
+<img width="807" alt="Screen Shot 2021-12-15 at 5 57 29 AM" src="https://user-images.githubusercontent.com/69823896/146147423-f4e93934-f86c-4c78-be9c-c798374444f3.png">
+In this section of the notebook, we set metrics to evaluate our loss on the validation set, evaluating the data for each epoch. As each batch is working, we unpack the inputs from our data model and tell the model not to compute or store gradients in order to save memory and encourage validation speed 
 (This is a computationally heavy step, and may require heavy hardware to compute). This is followed up by the forward pass and logit predictions, which contain the 
 probabilistic output in our final layer, and evaluate our accuracy, both traditional and MCC (our Matthews Correlation Coefficient. It produces a high score only if 
 the prediction obtained good results for true positives, false negatives, true negatives, and false positives).
