@@ -127,3 +127,8 @@ Github Articles, found
   - [here](https://jalammar.github.io/illustrated-transformer/)
   - [here](https://jalammar.github.io/illustrated-bert/)
 
+Youtube Videos, found
+  - [here](https://www.youtube.com/watch?v=xI0HHN5XKDo)
+  - [here](https://www.youtube.com/watch?v=hOCDJyZ6quA)
+  - [here](https://www.youtube.com/watch?v=7kLi8u2dJz0)
+
