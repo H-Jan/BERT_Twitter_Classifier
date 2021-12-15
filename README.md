@@ -1,8 +1,8 @@
-<h1> BERT Classifier for 2020 India Election Sentiment via Tweets
+<h1> BERT Classifier for 2020 India Election Sentiment via Tweets </h1>
 
->Tweets have quickly become a representation of voice across many countries, and as such, a prime depository for exploring NLP’s and their potential. The following is a notebook which explores the sentiment of tweets during the 2020 Indian election, and, using the BERT or Bidirectional Encoder Representations from Transformers model developed by Google, classifies tweets into one of three categories. 
+> Tweets have quickly become a representation of voice across many countries, and as such, a prime depository for exploring NLP’s and their potential. The following is a notebook which explores the sentiment of tweets during the 2020 Indian election, and, using the BERT or Bidirectional Encoder Representations from Transformers model developed by Google, classifies tweets into one of three categories. 
 
-**##Required Imports**
+<h2> **Required Imports** </h2>
 
 These include:
 
@@ -27,7 +27,7 @@ A Machine Learning library with classification algorithms among others.
 
 
 
-**##Data Analysis and Exploration**
+<h2> **Data Analysis and Exploration** </h2>
 Local loading in of the dataset in the form of a csv file. From there, we note:
 
 The sum of null values in the dataset
@@ -42,7 +42,7 @@ Understanding how the data is formatted
 
 
 
-**###Distribution of the dataset**
+<h3> **Distribution of the dataset** </h3>
 Understanding how the dataset is distributed across possible categories. Here we can note:
 
 72,250 positive tweets
@@ -53,14 +53,14 @@ Understanding how the dataset is distributed across possible categories. Here we
 
 
 
-**###Data Cleaning**
+<h3> **Data Cleaning** </h3>
 We will clean our data to ignore null values, seen as "nan"
 
 
 
 
 
-###**Target Encoding**
+<h3> **Target Encoding** </h3>
 Implementation of Target Encoding to convert our tweets into numbers for the computer to understand. 
 Target encoding doesn't add to the diemnsionality of the dataset, and benefits well here.
 
@@ -71,7 +71,7 @@ Target encoding doesn't add to the diemnsionality of the dataset, and benefits w
 
 
 
-**###Data Preparation for BERT Modeling***
+<h3> **Data Preparation for BERT Modeling*** </h3>
 First, we create a label for the sentence list, and then check the distribution of the data based on the labels.
 As we can note, the distribution is nearly identical to our dataset above, with a few missing values 
 (most likely nan values). We then set the maximum length of any sequence to 280 (for 280 characters in a tweet)
@@ -82,7 +82,7 @@ and import our BERT tokenizer to convert our text into tokens corresponding to t
 
 
 
-**Setting the parameters** for our input after encoded with the tokenizer. The parameters are:
+**Setting the parameter** for our input after encoded with the tokenizer. The parameters are:
 
 add_special_tokens
 
@@ -121,7 +121,7 @@ Use of torch DataLoader is simply to help on memory during training since this p
 
 
 
-**###Loading BERT for Sequence Classification**
+** <h3> Loading BERT for Sequence Classification</h3>**
 We load BERT for Sequence Classifiation, specifically using a pretrained BERT model with a single linear classification layer on top, with 3 total labels (positive, neutral, and negative). We follow this with basic tuning of parameters, such as learning rate, epochs, and AdamW with epsilon, a variation of the Adam optimizer.
 
 
