@@ -115,6 +115,8 @@ In conclusion, our model performed exceedingly well, though it most likely resul
 
 <h2> Resources </h2>
 
+Book Report, found [here](https://docs.google.com/document/d/1YGaaxz3GW1bQmFPKLrQXTmDtZjlYgFJu21N9ULUqjwE/edit?usp=sharing)
+
 Dataset, found [here](https://www.kaggle.com/praveengovi/bert-twitter-sentiment-classifier/data). 
 
 Coursera Course on BERT, found [here](https://www.coursera.org/lecture/attention-models-in-nlp/bidirectional-encoder-representations-from-transformers-bert-lZX7F)
