@@ -27,8 +27,7 @@ These include:
 
 
 <h2> Data Analysis and Exploration </h2>
-Local loading in of the dataset in the form of a csv file. For access to the dataset, it can be found [here](https://www.kaggle.com/praveengovi/bert-twitter-sentiment-classifier/data). 
-From there, we note:
+Local loading in of the dataset in the form of a csv file. For access to the dataset, it can be found at the bottom with the resources. From there, we note:
 
   - The sum of null values in the dataset
   - The size and shape of the dataset
@@ -115,6 +114,8 @@ Lastly, we add labels to convey the emotional sentiment alongwith our confusion 
 In conclusion, our model performed exceedingly well, though it most likely resulted in overfitment. The overall precision (A measure of positively predicted values), recall (or sensitivity), and f1-score all equated to 1.000. In fact, every metric equated to 1, indicating that the BERT was either fantastic in it's classification or it overfitted. 
 
 <h2> Resources </h2>
+
+Dataset, found [here](https://www.kaggle.com/praveengovi/bert-twitter-sentiment-classifier/data). 
 
 Coursera Course on BERT, found [here](https://www.coursera.org/lecture/attention-models-in-nlp/bidirectional-encoder-representations-from-transformers-bert-lZX7F)
 
